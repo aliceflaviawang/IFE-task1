@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>模拟报纸</title>
+  
+<style type="text/css">
+body{
+	background-color: #44565C;
+	color:#767777;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	margin: 0 auto;
+}
+.container{
+	width: 980px;
+	height: 1386px;
+	margin:0 auto;
+	background: #fff;
+	padding: 0 44px;
+}
+.ife_url{
+	width:110px;
+	height: 61px;
+	background-color: #db3e75;
+	position: relative;
+}
+.ife_url p{
+	position:absolute;
+	margin-left: 4px;
+	bottom: 2px;
+	color: #ffffff;
+	font-family: "黑体"；
+	
+}
+header{
+	margin-bottom: 30px;
+	position:relative;
+}
+.date{
+	position: absolute;
+	right:0px;
+	bottom:5px;
+	color: #d45d5c;
+	font-family: "黑体"；
+
+}
+.underline_one{
+	border:2px solid #938e8c;
+	margin-top: 0px;
+}
+.one{
+	position: relative;
+}
+.img_one img{
+    width:641px;
+    height:301px
+}
+
+.img_one_l{
+	background: #72A664;
+	opacity: 0.5;
+	width: 191px;
+	height:301px;
+    position: absolute;
+    top:0px;
+}
+.img_one_r{
+	background: #E1ABC3;
+	opacity: 0.5;
+	width: 191px;
+	height:301px;
+    position: absolute;
+    top:0px;
+    left: 450px;
+}
+.aside{
+	width:233px;
+	position: absolute;
+	top:0px;
+	right:0px;
+}
+.underline_two{
+	border:2px solid #cc8091;
+	top:0px;
+
+}
+.h2{
+	font-size: 24px;
+	color: #000000;
+	font-family: "微软雅黑";
+	text-decoration: underline;
+	font-variant: small-caps;
+    margin-top:-5px;
+    margin-bottom: -3px;
+}
+.zw{
+	font-family: "楷体";
+	line-height: 10px;
+}
+.num{
+	font-size: 116px;
+	color: #75b86b;
+	font-family: "微软雅黑";
+	text-decoration: underline;
+	font-style: italic;
+	margin-top: -30px;
+}
+.aside_down{
+	position: relative;
+	color: #cc8091;
+    font-family: "微软雅黑";
+}
+.mark_1{
+    font-size: 55px;
+   position: absolute;
+	top: -160px;
+
+}
+.mark_2{
+	font-size: 21px;
+	position: absolute;
+	top:-100px;
+	right:108px;
+}
+
+.mark_3{
+	font-size: 12px;
+	position: absolute;
+	top:-70px;
+	right:60px;
+}
+.wwh{
+	padding:0px;
+	letter-spacing:2px;
+	width:641px;
+}
+div.what{
+	display: table-cell;
+	line-height: 16px;
+	padding-right:10px;
+	width: 40%;
+	font-size:12px;
+	color:#767777;
+	font-family: "宋体"；
+
+
+}
+div.when{
+	display: table-cell;
+	line-height: 16px;
+	padding:10px;
+	width:30%;
+	font-size:12px;
+	color:#231815;
+	font-family: "微软雅黑"；
+
+}
+div.how{
+	display: table-cell;
+	line-height:8px;
+	padding:10px;
+	width:30%;
+	font-size:12px;
+	color:#cd4a48;
+	font-family: "微软雅黑"；
+    
+}
+p.what{
+	font-size: 16px;
+	color: #418c59;
+	font-style: bold;
+	text-decoration: underline;
+}
+p.when{
+	font-size: 16px;
+	color: #d2994f;
+	font-style: bold;
+	text-decoration: underline;
+}
+p.how{
+	margin-bottom: 24px;
+	font-size: 16px;
+	color: #cc7680;
+	font-style: bold;
+	text-decoration: underline;
+}
+p.t{
+	margin-bottom: 40px;
+}
+
+.wwh .w_3 p{
+	
+	color: #231815;
+	font-size: 12px;
+	opacity:70%;
+	
+}
+.wwh .w_3 p span{
+	color: #cd4a48;
+	font-style:italic;
+}
+.art_l{
+	width:415px;
+}
+.art_l_up{
+	font-family: "黑体";
+	
+	font-weight: bold;
+}
+
+
+.mark_one{
+	font-size: 42px;
+	color:#11456b;
+	word-wrap: break-word;
+	line-height: 40px;
+	margin-bottom: -30px;
+}
+.mark_one span{
+    font-size: 72px;
+    color:#f5e327;
+    font-style: italic;
+}
+.mark_two{
+	font-size: 33px;
+	color:#11456b;
+	margin-bottom:10px;
+}
+.art_l hr{
+	border: 2px solid #11456b;
+	word-spacing:2px;
+}
+.art_l_down{
+	line-height: 16px;
+	font-family: "宋体";
+}
+.art_l_down p span{
+	font-size: 70px;
+	float: left;
+	padding: 20px 10px 30px 0;
+	color:#f5e327;
+    font-family: "微软雅黑";
+}
+.art_l_down .par_two{
+	text-indent:2em;
+	margin-top: -10px;
+}
+.art_l_down .par_three{
+	text-indent:2em;
+	margin-top: -10px;
+}
+.art_l_down .img_two{
+	float:right;
+	margin-top: -10px;
+	padding:15px;
+	width:226px;
+	height:250px;
+}
+.art_r{
+	float: right;
+	width: 458px;
+	margin-top:-660px;
+}
+.art_r .art_r_up{
+	position: relative;
+	margin-top: 15px;
+}
+.art_r .art_r_up .img_three{
+	width:458px;
+	height: 275px;
+}
+.art_r .art_r_up .mark_one{
+	background: black;
+	width:458px;
+	height:61px;
+	position:absolute;
+	bottom: 35px;
+	background-color:rgba(0,0,0,0.3)
+}
+.art_r .art_r_up .describe{
+	position: absolute;
+	bottom: 5px;
+	height: 40px;
+	margin-left: 70px;
+	padding-left: 20px;
+	border-left: 3px solid #72b16a; 
+
+}
+.art_r .art_r_up .describe .des_one{
+	font-size: 26px;
+	color:#ffffff;
+	font-family: "微软雅黑";
+
+
+}
+.art_r .art_r_up .describe .des_two{
+	font-size: 12px;
+	color:#72b16a;
+	font-family: "微软雅黑";
+	letter-spacing: 140%;
+	font-style: italic;
+}
+.art_r .art_r_down{
+	width:459px;
+	height: 318px;
+	background-color: #eeedd6;
+	margin-top: 35px;
+}
+.art_r .art_r_down p .triangle{
+	 width: 0;
+	 height: 0;
+	 border-left:5px solid transparent;
+	 border-right: 5px solid transparent;
+	 border-bottom: 10px solid #10456b;
+	 display: inline-block;
+}
+.art_r .art_r_down p{
+	padding-top:40px;
+	padding-left: 40px;
+	
+}
+
+.art_r .art_r_down p .mark_one{
+	font-size: 16px;
+	color:#5a5b5b;
+	font-family: "宋体";
+	line-height: 20px;
+}
+.art_r .art_r_down p .mark_word{
+	font-size: 12px;
+	color:#5a5b5b;
+	font-family: "宋体";
+	line-height: 20px;
+	font-style:italic;
+
+}
+.art_r_down_l{
+	width: 260px;
+	height:160px;
+	background-color: #ea2d70;
+	margin-top: 55px;
+}
+
+.zero{
+	font-size: 110px;
+	color:#ffffff;
+	font-family: "微软雅黑";
+}
+.art_r_down_l .line{
+	border-left:2px solid #ffffff;
+	height:86px;
+	position:absolute;
+	margin-top: -112px;
+	margin-left: 70px;
+	
+}
+.art_r_down_l .line .mark_one{
+	font-size: 21px;
+	color:#ffffff;
+	font-family: "黑体";
+	font-style: italic;
+	line-height: 24px;
+	margin-left:-30px;
+	margin-top: -40px;
+	
+}
+.art_r_down_l .line .mark_two{
+	font-size: 12px;
+	color: #ffffff;
+	font-family: "黑体";
+	
+	letter-spacing: 2px;
+	max-width: 150px;
+	margin-left: -27px;
+	margin-top: -30px;
+	word-wrap: break-word;
+}
+.art_r_down_r{
+	float:right;
+	max-width: 200px;
+	margin-top: -200px;
+}
+
+.art_r_down_r span{
+	font-size: 72px;
+color: #d45d5c;
+}
+span.note_one{
+
+float:left;
+margin: -18px 10px -60px -40px;
+}
+span.note_two{
+
+float:right;
+}
+.art_r_down_r p{
+	font-size: 14px;
+	color: #5a5b5b;
+	font-family: "黑体";
+}
+hr.weixian{
+	width:980px;
+	height: 1px;
+	color: #938e8c;
+	margin-top:20px;
+}
+.footer p{
+	font-size: 12px;
+	color:#d45d5c;
+	font-family: "黑体";
+	float:right;
+	margin-top: -8px;
+}
+</style>
+	<div class="container">
+		<header>
+			<div class="ife_url"><p>life.baidu.com</p></div>
+			<p class="date">2016.03</p>;
+			<hr class="underline_one">
+		</header>
+		<section class="one">
+		    <div class="img_one">
+		    	<img src=".\images\2.jpg">
+		    	<div class="img_one_l"></div>
+		    	<div class="img_one_r"></div>
+		    </div>
+		    <div class="aside">
+		        <hr class="underline_two">
+		        <p class="h2">About</p>
+		        <p class="h2">Technology</p>
+		        <p class="zw">About technologe About technologe About technologe</p>
+		        <p class="num">700</p>
+		        <div class="aside_down">
+		            <p class="mark_1">3.2</p>
+					<p class="mark_2">css</p>
+					<p class="mark_3">cssssscsssscss</p>
+		        	
+		        </div>
+		    <<div>
+		    	
+		    </div>
+		    </div>
+		</section>
+		<section class="wwh">
+		<div class="what">
+	   	<p class="what">What</p>
+	   	<p>前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端前端前端</p>
+	   </div>
+	   <div class="when">
+	   	<p class="when">When</p>
+	   	<p>前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端</p>
+	   </div>
+	   <div class="how">
+	   	<p class="how">How</p>
+	   <p>前端前端前端前端</p>
+	   <p >端前端前端</p>
+	   <p class="t">端</p>
+				<p>
+					What-------- <span>40%</span>
+				</p>
+				<p>
+					What-------- <span>30%</span>
+				</p>
+				<p>
+					What-------- <span>30%</span>
+				</p>
+	   </div>
+	   
+
+			
+		</section>
+		<section class="article">
+			<div class="art_l">
+				<div class="art_l_up">
+					<p class="mark_one"><span>THE</span> TECHNOLOGY OF FRONT</p>
+					<p class="mark_two">前端技术领域</p>
+					<hr class="underline">
+				</div>
+				<div class="art_l_down">
+					<p><span>前</span>端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端</p><img class="img_two" src=".\images\2.jpg">
+					<p class="par_two">端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前前端前端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端</p>
+					<p class="par_three">端前端前端前端前端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端前前端端前端前端前端前端前端前端前端前端前端前端端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端端</p>
+				</div>
+
+			</div>
+			<div class="art_r">
+			     <div class="art_r_up">
+			     <img class="img_three" src=".\images\2.jpg">
+			     <div class="mark_one"></div>
+					<p class="describe"><span class="des_one">前端技术</span><span class="des_two">&nbsp;&nbsp;前端技术前端技术</span></p>
+			     	
+			     </div>
+			     <div class="art_r_down">
+			     <p>
+						<span class="triangle"></span>
+						<span class="mark_one">前端前端前端前端前端前端 ...................</span>
+						<span class="mark_word">前端</span>
+					<br>
+						<span class="triangle"></span>
+						<span class="mark_one">前端前端前端前端前端前端 ...................</span>
+						<span class="mark_word">前端</span>
+					<br>
+						<span class="triangle"></span>
+						<span class="mark_one">前端前端前端前端前端前端 ...................</span>
+						<span class="mark_word">前端</span>
+					</p>
+					<div class="art_r_down_l">
+
+					<span class="zero">0</span>
+					<div class="line">
+						
+					<p class="mark_one">ONE TWO<br>THREE FOUR FIVE<br></p>
+					<p class="mark_two">hello world hello world hello world</p>
+						
+					
+					</div>
+					</div>
+					<div class="art_r_down_r">
+					<p>
+					<span class="note_one">"</span>
+					hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world
+					<span class="note_two">"</span>
+						</p>
+					</div>
+			     </div>
+				
+			</div>
+			
+		</section>
+		<hr class="weixian">
+		<div class="footer">
+            <p>life.baidu.com
+            	
+            </p>
+		</div>
+	</div>
